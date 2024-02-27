@@ -1,0 +1,139 @@
+.section.header {
+  padding-top: 160px;
+}
+.no-overflow {
+  overflow: hidden;
+}
+.section {
+  position: relative;
+}
+.w-container:before,
+.w-container:after {
+  content: " ";
+  grid-area: 1 / 1 / 2 / 2;
+  display: table;
+}
+.flex-tl.home-header.x-margin-btm {
+  margin-bottom: 0;
+}
+/* .flex-tl.home-header {
+  margin-bottom: 160px;
+}
+.x-margin-btm {
+  margin-bottom: 0;
+} */
+.flex-tl {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+.hero-heading {
+  min-width: 600px;
+}
+.paragraph-lrg {
+  align-self: flex-start;
+  font-size: 1.15em;
+  line-height: 1.65;
+}
+.flex-ml.x-gap {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.margin-btm-tiny {
+  margin-bottom: 16px;
+}
+.margin-top-med {
+  margin-top: 48px;
+}
+.flex-ml {
+  /* grid-column-gap: 12px;
+  grid-row-gap: 12px; */
+  align-items: center;
+  display: flex;
+}
+.button {
+  border: 2px none var(--complementary-orange);
+  background-color: var(--complementary-orange);
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background-image: linear-gradient(#d57843, #ea4e4e);
+  margin-right: 24px;
+  padding: 24px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.w-button {
+  /* color: #fff;
+  line-height: inherit; */
+  cursor: pointer;
+  /* background-color: #3898ec;
+  border: 0; */
+  border-radius: 0;
+  /* padding: 9px 15px;
+  text-decoration: none; */
+  display: inline-block;
+}
+.button.clear {
+  border: 2px solid var(--breeze-blue);
+  color: var(--breeze-blue);
+  background-color: rgba(255, 103, 84, 0);
+  background-image: none;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+section.section-med {
+  background-color: transparent;
+  padding-top: 100px;
+}
+.grid-3.gap-lrg {
+  grid-column-gap: 60px;
+  grid-row-gap: 96px;
+}
+.gap-lrg {
+  grid-column-gap: 60px;
+}
+.grid-3 {
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+}
+.img-product {
+  width: 75%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.1;
+}
+p {
+  white-space: normal;
+  margin-bottom: 24px;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.65;
+}
+h1 {
+  color: var(--black);
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 3.5em;
+  font-weight: 700;
+  line-height: 1.1;
+}

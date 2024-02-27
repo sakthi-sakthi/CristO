@@ -1,0 +1,128 @@
+.title {
+  color: #2b2b2b;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 3.5em;
+  font-weight: 700;
+  line-height: 1.1;
+  font-family: "POPPINS";
+}
+
+.paragraph {
+  color: #2b2b2b;
+  white-space: normal;
+  margin-bottom: 24px;
+  font-size: 1.15em;
+  font-weight: 500;
+  line-height: 2;
+  font-family: "POPPINS";
+}
+
+.button-app {
+  height: 50px !important;
+  max-width: 100%;
+  display: inline-block;
+}
+
+#imgcol {
+  width: 36rem;
+}
+
+.app-screenshot {
+  width: 300px;
+}
+
+.eyebrow {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: Matter, Arial, sans-serif;
+  font-size: 1.8em;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+#admin {
+  color: #2b2b2b;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 2;
+  font-family: poppins;
+}
+
+.add {
+  color: #2b2b2b;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  font-size: 2.25em;
+  font-weight: 700;
+  line-height: 1.1;
+  font-family: poppins;
+}
+
+.list-bullet {
+  padding-left: 24px;
+}
+
+.margin-btm-sml {
+  margin-bottom: 24px;
+}
+
+#wrap {
+  margin-top: 4rem;
+  font-family: Poppins;
+}
+
+#mobtit {
+  font-size: 2.5rem;
+  font-family: Poppins;
+}
+
+.section.section-med.bg-light-blue.is-app {
+  padding-bottom: 0;
+}
+.section.section-med.bg-light-blue {
+  background-color: #ffffff;
+}
+.section.section-med {
+  background-color: transparent;
+  padding-top: 100px;
+}
+.mobileapp {
+  padding: 120px 36px;
+  position: relative;
+  color: #2b2b2b;
+  font-family: Matter, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+}
+.flex-msb.border-app.swap {
+  flex-direction: row-reverse;
+  padding-left: 48px;
+  padding-right: 0;
+}
+.flex-msb.border-app {
+  grid-column-gap: 60px;
+  grid-row-gap: 60px;
+  border-bottom: 1px solid #004777;
+  margin-bottom: 24px;
+  padding-right: 48px;
+}
+.flex-msb {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.mobile-margin-btm {
+  color: #2b2b2b;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 3.5em;
+  font-weight: 700;
+  line-height: 1.1;
+  padding: 0px !important;
+}

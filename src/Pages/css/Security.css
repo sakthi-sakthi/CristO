@@ -1,0 +1,73 @@
+.banner-image {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  /* Adjust the maximum width to your preference */
+  margin: 0 auto;
+}
+
+.legal-overview {
+  border-radius: 6px;
+  /* margin-bottom: 3.5em; */
+  padding: 1.6em 1.6em 0.6em;
+}
+
+@media (min-width: 769px) {
+  .legal-content-section {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .heading--h5 {
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 768px) {
+  .heading--h5 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.heading--h5 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.terms-subheading {
+  margin-bottom: 0.75em;
+  margin-top: 1.61em;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.title {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 4rem;
+  font-weight: 600;
+  color: black;
+  text-transform: uppercase;
+}
+
+.sub {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: -4rem;
+  color: black;
+}
+
+#headtitle {
+  font-size: 30px;
+  font-family: Poppins;
+  text-transform: uppercase;
+}

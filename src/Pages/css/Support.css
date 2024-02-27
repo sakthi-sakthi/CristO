@@ -1,0 +1,25 @@
+.progress {
+  height: 10px;
+}
+
+.card-body:hover h5 a {
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+#det {
+  font-family: "Poppins";
+  font-size: 14.5px;
+}
+
+h6#det a:hover {
+  color: #ff9000;
+}
+
+.phone-container a:hover {
+  color: #ff9000;
+}
+
+#suptit {
+  color: #f58120;
+}
