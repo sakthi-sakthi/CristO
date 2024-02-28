@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { ApiUrl } from '../API/ApiUrl';
 
 
 const ModalForm = () => {
@@ -13,6 +14,7 @@ const ModalForm = () => {
         message: ''
     });
     const [captchaVerified, setCaptchaVerified] = useState(false);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         const cristo = localStorage.getItem('cristo');
         if (!cristo) {
@@ -43,6 +45,7 @@ const ModalForm = () => {
     };
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (!formData.name || !formData.email || !formData.mobile || !formData.message) {
             Swal.fire({
                 title: 'Oops...!',
@@ -73,9 +76,10 @@ const ModalForm = () => {
             });
             return;
         }
+        setLoading(true);
 
         try {
-            const response = await axios.post('https://api.sendinblue.com/v3/smtp/email', {
+            const emailResponse = await axios.post('https://api.sendinblue.com/v3/smtp/email', {
                 sender: { email: formData.email },
                 to: [{ email: 'sakthiganapathis97@gmail.com' }],
                 cc: [{ email: 'muniraj@dbcyelagiri.edu.in' }],
@@ -173,7 +177,7 @@ const ModalForm = () => {
                 }
             });
 
-            if (response.status === 201) {
+            if (emailResponse.status === 201) {
                 // Sending confirmation email to the user
                 const confirmationResponse = await axios.post('https://api.sendinblue.com/v3/smtp/email', {
                     sender: { email: 'sakthiganapathis97@gmail.com' },
@@ -266,28 +270,32 @@ const ModalForm = () => {
                 });
 
                 if (confirmationResponse.status === 201) {
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Your request has been sent successfully. Please check your email for confirmation.',
-                        icon: 'success',
-                        confirmButtonText: 'OK'
-                    }).then(() => {
-                        window.location.reload();
-                    });
-                    setFormData({
-                        name: '',
-                        mobile: '',
-                        email: '',
-                        address: '',
-                        message: ''
-                    });
-                    setCaptchaVerified(false);
+                    const storeResponse = await axios.post(`${ApiUrl}/store/contact`, formData);
+                    if (storeResponse.status === 200) {
+                        Swal.fire({
+                            title: 'Email Sent Success!',
+                            text: 'Your request has been sent successfully. Please check your email for confirmation.',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                        setFormData({
+                            name: '',
+                            mobile: '',
+                            email: '',
+                            address: '',
+                            message: ''
+                        });
+                        setCaptchaVerified(false);
+                    }
                 } else {
                     throw new Error('Failed to send confirmation email.');
                 }
             } else {
                 throw new Error('Failed to send email.');
             }
+            setLoading(false);
         } catch (error) {
             console.error('Error sending email:', error);
             Swal.fire({
@@ -416,7 +424,7 @@ const ModalForm = () => {
                                             className="btn btn-primary btn-block"
                                             id="submitBtn"
                                         >
-                                            Activate Free Demo
+                                            {loading ? 'Processing...' : 'Activate Free Demo'}
                                         </button>
                                         <br />
                                         <br />

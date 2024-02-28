@@ -291,8 +291,6 @@ const Header = () => {
                     </ul>
                 </div>
             </div>
-
-            {/* Overlay for mobile menu */}
             {
                 showMobileMenu &&
                 <div className="offcanvas-backdrop" onClick={toggleMobileMenu}></div>
