@@ -229,9 +229,27 @@ const Header = () => {
                         </li>
 
                         <li className="dropdown">
-                            <Link to={"/team"}>
-                                <span>Team</span> <i className="bi bi-chevron-down" />
-                            </Link>
+                            <span onClick={(e) => e.preventDefault()} data-bs-toggle="dropdown">About</span> <i className="bi bi-chevron-down" />
+                            <ul className="dropdown-menu">
+                                <li>
+                                    <Link to={"/vissmiss"}>
+                                        <img src='assets/img/cristo/vissmiss.png' alt='data transfer' style={{ maxWidth: "42px", marginRight: "10px", marginBottom: "-20px" }} />
+                                        Vission & Mission <br />  <small style={{ marginLeft: "52px" }}>Innovating with purpose, achieving </small><br /><small style={{ marginLeft: "52px" }}> with passion</small>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to={"/corevalue"}>
+                                        <img src='assets/img/cristo/core.png' alt='mobileapp' style={{ maxWidth: "42px", marginRight: "10px", marginBottom: "-20px" }} />
+                                        Core Values <br /><small style={{ marginLeft: "52px" }}>Guiding principles, limitless potential</small>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to={"/team"}>
+                                        <img src='assets/img/cristo/team.png' alt='security' style={{ maxWidth: "42px", marginRight: "10px", marginBottom: "-20px" }} />
+                                        Our Teams <br /><small style={{ marginLeft: "52px" }}>Unified in purpose, diverse in talents</small>
+                                    </Link>
+                                </li>
+                            </ul>
                         </li>
 
                         <li className="dropdown">
