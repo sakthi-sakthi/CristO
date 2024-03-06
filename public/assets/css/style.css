@@ -10,7 +10,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
   color: #444444;
 }
 
@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 /*--------------------------------------------------------------
@@ -2468,4 +2468,7 @@ section {
 }
 #footer .footer-top .footer-links ul a:hover {
   color: #ed6523;
+}
+.bg-off-white {
+  background-color: #f8f9fa;
 }

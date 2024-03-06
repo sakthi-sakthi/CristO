@@ -9,6 +9,8 @@ import MainLayout from "./layout";
 import OurTeam from "./Pages/OurTeam";
 import DataTransfer from "./Pages/DataTransfer";
 import AboutCristo from "./Pages/AboutCristo";
+import VissionMission from "./Pages/VissionMission";
+import CoreValues from "./Pages/CoreValues";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path="team" element={<OurTeam />} />
             <Route path="datatransfer" element={<DataTransfer />} />
             <Route path="aboutcristo" element={<AboutCristo />} />
+            <Route path="vissmiss" element={<VissionMission />} />
+            <Route path="corevalue" element={<CoreValues />} />
             <Route path="contactus" element={<ContactUs />} />
           </Route>
         </Routes>

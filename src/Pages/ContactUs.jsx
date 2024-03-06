@@ -49,7 +49,6 @@ const ContactUs = () => {
             });
             return;
         }
-
         const mobileRegex = /^\d{10}$/;
         if (!mobileRegex.test(formData.mobile)) {
             Swal.fire({
@@ -60,7 +59,6 @@ const ContactUs = () => {
             });
             return;
         }
-
         try {
             const response = await axios.post('https://api.sendinblue.com/v3/smtp/email', {
                 sender: { email: 'sakthiganapathis97@gmail.com' },

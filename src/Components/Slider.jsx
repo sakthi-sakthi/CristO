@@ -16,7 +16,7 @@ const Slider = () => {
     const slides = [
         {
             backgroundImage: "url(assets/img/cristo/04-slide.jpg)",
-            title: "<span style='color: #018bd2'>Welcome to</span> <br/> Parish Management Software <span style='color:#ff8001'>( PAROKIA )</span>",
+            title: "<span style='color: #018bd2'>Welcome to</span> <br/> Church Management Software <span style='color:#ff8001'>( CRISTO )</span>",
             content: "Store & organize the member data that’s best for your church <b>“Church Sans Paper”</b> Effective Parish management software is a comprehensive digital solution designed to streamline and enhance the administrative and organizational tasks of a religious congregation.Parish with facilities manage families, members & sacraments.CristO is accessible at the diocesan, parish, family or individual member level.Diocesan administrator can have access to all information related to the diocese.",
         },
         {
