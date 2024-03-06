@@ -11,7 +11,7 @@ const OurTeam = () => {
         <>
             <div className="team-area">
                 <div className="col-md-12">
-                    <div className="site-heading text-center mt-2">
+                    <div className="site-heading text-center">
                         <h2 className="mt-4 text-center" id='welcomecristo'>
                             <b>Our Team</b>
                         </h2>
@@ -63,7 +63,7 @@ const OurTeam = () => {
                                     <div className="single-team">
                                         <div className="img-area">
                                             <img
-                                                src="https://i.postimg.cc/wMMhrMDm/2.jpg"
+                                                src="assets/img/team/immanuel.jpg"
                                                 className="img-responsive"
                                                 alt=""
                                             />
@@ -71,8 +71,25 @@ const OurTeam = () => {
                                             </div>
                                         </div>
                                         <div className="img-text">
-                                            <h4>John Doe</h4>
-                                            <h5>Web Designer</h5>
+                                            <h4>Immanuel Kumar</h4>
+                                            <h5>Director, Product Dev (CristO)</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-3 col-sm-6 col-xs-12">
+                                    <div className="single-team">
+                                        <div className="img-area">
+                                            <img
+                                                src="assets/img/team/augustin-stalin.jpg"
+                                                className="img-responsive"
+                                                alt=""
+                                            />
+                                            <div className="social">
+                                            </div>
+                                        </div>
+                                        <div className="img-text">
+                                            <h4>Augustin Stalin</h4>
+                                            <h5>Senior Program Lead</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +102,7 @@ const OurTeam = () => {
                                     <div className="single-team">
                                         <div className="img-area">
                                             <img
-                                                src="https://i.postimg.cc/wMMhrMDm/2.jpg"
+                                                src="assets/img/team/augustin-stalin.jpg"
                                                 className="img-responsive"
                                                 alt=""
                                             />
@@ -93,8 +110,8 @@ const OurTeam = () => {
                                             </div>
                                         </div>
                                         <div className="img-text">
-                                            <h4>John Doe</h4>
-                                            <h5>Web Designer</h5>
+                                            <h4>Augustin Stalin</h4>
+                                            <h5>Senior Program Lead</h5>
                                         </div>
                                     </div>
                                 </div>

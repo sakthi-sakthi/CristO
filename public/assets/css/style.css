@@ -11,7 +11,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Montserrat", sans-serif !important;
-  color: #444444;
+  color: #000;
 }
 
 a {
@@ -30,7 +30,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif !important;
 }
 
 /*--------------------------------------------------------------
@@ -132,7 +131,6 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Set the desired overlay color */
 }
 
 .navbar a,
@@ -2154,10 +2152,10 @@ section {
 }
 
 #footer .credits {
-  padding-top: 10px;
   text-align: center;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.6);
+  margin-left: 30px;
 }
 
 #footer .credits a {
@@ -2264,11 +2262,11 @@ section {
   margin-bottom: 42px !important;
 }
 #footer .copyright a {
-  font-size: 17px;
+  font-size: 14px;
   color: #ffffff;
 }
 #footer .footer-top .footer-contact p {
-  font-size: 17px;
+  font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Roboto", sans-serif;
@@ -2279,7 +2277,7 @@ section {
   font-weight: bold;
   color: #ffffff;
   position: relative;
-  padding-bottom: 12px;
+  padding-bottom: 0px;
 }
 #footer .footer-top .footer-links ul {
   list-style: none;
@@ -2402,6 +2400,9 @@ section {
   color: #016fba;
   margin-right: 8px;
   display: inline-block;
+}
+.text-in-link:hover {
+  color: red;
 }
 .small-arrowlink {
   width: 0.8em;

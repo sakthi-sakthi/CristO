@@ -29,8 +29,8 @@ const SupportCenter = () => {
                 </p>
                 <p
                   data-toggle="modal"
-                  data-target="#largeModal"
-                  className="buttonguid w-button"
+                  data-target="#exampleModalCenter"
+                  className="getstarted buttonguid w-button"
                 >
                   Start Guided Tour
                 </p>

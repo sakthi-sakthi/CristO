@@ -208,13 +208,8 @@ const Footer = () => {
                                     <li>
                                         <a href="/">&nbsp;Charisma</a>
                                     </li>
-                                    <li>
-                                        {" "}
-                                        <a href="https://cristoerp.com/security">&nbsp;Security</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://cristoerp.com/mobile">&nbsp;Mobile App</a>
-                                    </li>
+                                    <br />
+                                    <Track />
                                 </ul>
                             </div>
                             <div className="col-lg-3 col-md-6 footer-links">
@@ -283,7 +278,6 @@ const Footer = () => {
                                     </p>
                                 </ul>
                             </div>
-                            <Track />
                         </div>
                     </div>
                 </div>

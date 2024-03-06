@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import CookieConsent from "react-cookie-consent";
 import Track from "../../Components/Track";
 
+
 const MainFooter = () => {
     // eslint-disable-next-line
     const [showBanner, setShowBanner] = useState(
@@ -57,7 +58,7 @@ const MainFooter = () => {
                                     </a>
                                     <p>
                                         {" "}
-                                        © 2024 CristO.
+                                        © 2024 CristO
                                         <br /> Powered by
                                         <a
                                             href="https://www.boscosofttech.com"
@@ -208,13 +209,8 @@ const MainFooter = () => {
                                     <li>
                                         <a href="/">&nbsp;Charisma</a>
                                     </li>
-                                    <li>
-                                        {" "}
-                                        <a href="https://cristoerp.com/security">&nbsp;Security</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://cristoerp.com/mobile">&nbsp;Mobile App</a>
-                                    </li>
+                                    <br />
+                                    <Track />
                                 </ul>
                             </div>
                             <div className="col-lg-3 col-md-6 footer-links">
@@ -275,9 +271,6 @@ const MainFooter = () => {
                                         <strong style={{ color: "white" }}>Phone :</strong>{" "}
                                         <a href="tel:9786000436">+91 9786 0004 36</a>
                                         <br />
-                                        <strong style={{ color: "white" }}>Tour Request:</strong>{" "}
-                                        <a href="tel:9629146030">+91 9629 1460 30</a>
-                                        <br />
                                         <strong style={{ color: "white" }}>Email:</strong>&nbsp;&nbsp;
                                         <a href="mailto:cristo@boscosofttech.com">
                                             cristo@boscosofttech.com
@@ -286,7 +279,6 @@ const MainFooter = () => {
                                     </p>
                                 </ul>
                             </div>
-                            <Track />
                         </div>
                     </div>
                 </div>
