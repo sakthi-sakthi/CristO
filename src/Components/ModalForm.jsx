@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-import { ApiUrl } from '../API/ApiUrl';
 
 
 const ModalForm = () => {
@@ -10,20 +9,18 @@ const ModalForm = () => {
         name: '',
         mobile: '',
         email: '',
-        address: '',
         message: ''
     });
-    const [captchaVerified, setCaptchaVerified] = useState(false);
-    const [loading, setLoading] = useState(false);
+
     useEffect(() => {
-        const cristo = localStorage.getItem('cristo');
-        if (!cristo) {
+        const modalShown = sessionStorage.getItem('modalShown');
+        if (!modalShown) {
             const timer = setTimeout(() => {
                 const modal = document.getElementById('exampleModalCenter');
                 if (modal) {
                     const modalInstance = new window.bootstrap.Modal(modal);
                     modalInstance.show();
-                    localStorage.setItem('cristo', 'true');
+                    sessionStorage.setItem('modalShown', 'true');
                 }
             }, 3000);
 
@@ -31,12 +28,9 @@ const ModalForm = () => {
         }
     }, []);
 
-
     const handleVerification = (token) => {
         console.log('hCaptcha token:', token);
-        setCaptchaVerified(true);
     }
-
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -45,7 +39,6 @@ const ModalForm = () => {
     };
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         if (!formData.name || !formData.email || !formData.mobile || !formData.message) {
             Swal.fire({
                 title: 'Oops...!',
@@ -55,17 +48,6 @@ const ModalForm = () => {
             });
             return;
         }
-
-        if (!captchaVerified) {
-            Swal.fire({
-                title: 'Oops...!',
-                text: 'Please complete the captcha.',
-                icon: 'error',
-                confirmButtonText: 'OK'
-            });
-            return;
-        }
-
         const mobileRegex = /^\d{10}$/;
         if (!mobileRegex.test(formData.mobile)) {
             Swal.fire({
@@ -76,14 +58,12 @@ const ModalForm = () => {
             });
             return;
         }
-        setLoading(true);
-
         try {
-            const emailResponse = await axios.post('https://api.sendinblue.com/v3/smtp/email', {
-                sender: { email: formData.email },
-                to: [{ email: 'sakthiganapathis97@gmail.com' }],
+            const response = await axios.post('https://api.sendinblue.com/v3/smtp/email', {
+                sender: { email: 'sakthiganapathis97@gmail.com' },
+                to: [{ email: formData.email }],
                 cc: [{ email: 'muniraj@dbcyelagiri.edu.in' }],
-                subject: 'Request For Demo',
+                subject: '30-Days Free Trial',
                 htmlContent: `<!DOCTYPE html>
           <html lang="en">
           <head>
@@ -159,13 +139,15 @@ const ModalForm = () => {
                     <p><strong>Name:</strong> ${document.getElementById("name").value}</p>
                     <p><strong>Email:</strong> ${document.getElementById("email").value}</p>
                     <p><strong>Mobile:</strong> <a href="tel:${document.getElementById("mobile").value}">${document.getElementById("mobile").value}</a></p>
-                    <p><strong>Address:</strong> ${document.getElementById("address").value}</p>
                     <p><strong>Message:</strong> ${document.getElementById("message").value}</p>
               </div>
-              <p>Best Regards,<br><b>CristO Team</b></p>
+              <p>Best wishes,<br><b>CristO team</b></p>
               <hr>
               <p>If you want to visit our Website, click the button below:</p>
               <a href="https://cristoerp.com/" target="_blank" class="btn">Visit Website</a>
+              <div class="footer-text">
+              <p>Thank you for reaching out! For more information, visit our website <a href="https://cristoerp.com/" target="_blank">here</a>.</p>
+              </div>
             </div>
           </body>
           </html>
@@ -173,131 +155,27 @@ const ModalForm = () => {
             }, {
                 headers: {
                     'Content-Type': 'application/json',
-                    'api-key': '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'
+                    'api-key': ''
                 }
             });
 
-            if (emailResponse.status === 201) {
-                // Sending confirmation email to the user
-                const confirmationResponse = await axios.post('https://api.sendinblue.com/v3/smtp/email', {
-                    sender: { email: 'sakthiganapathis97@gmail.com' },
-                    to: [{ email: formData.email }],
-                    subject: 'Confirmation: Your Request For Demo',
-                    htmlContent: `<!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Confirmation - Your Request For Demo</title>
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-            <style>
-              body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background-color: #f8f9fa;
-                padding: 20px;
-              }
-              .email-container {
-                max-width: 600px;
-                margin: 0 auto;
-                background-color: #fff;
-                border-radius: 10px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-                padding: 30px;
-              }
-              .message-box {
-                padding: 20px;
-                border-left: 4px solid #007bff;
-                font-style: italic;
-                background-color: #f0f0f0;
-                margin-top: 20px;
-                border-radius: 5px;
-              }
-              .btn {
-                background-color: #007bff;
-                color: #fff;
-                padding: 10px 20px;
-                border-radius: 5px;
-                text-decoration: none;
-                transition: background-color 0.3s ease;
-              }
-              .btn:hover {
-                background-color: #0056b3;
-                color:#fff
-              }
-              h2 {
-                color: #007bff;
-                text-align: center;
-                margin-bottom: 20px;
-              }
-              p {
-                font-size: 16px;
-                line-height: 1.6;
-              }
-              b {
-                color: #007bff;
-              }
-              .footer-text {
-                margin-top: 20px;
-                font-size: 14px;
-              }
-              .footer-text a {
-                color: #007bff;
-                text-decoration: none;
-              }
-              .footer-text a:hover {
-                text-decoration: underline;
-              }
-            </style>
-          </head>
-          <body>
-            <div class="email-container">
-              <div class="message-box">
-                    <p>Dear ${formData.name},</p>
-                    <p>Thank you for reaching out to us. We have received your request for a demo and will get back to you shortly.</p>
-              </div>
-              <p>Best Regards,<br><b>CristO Team</b></p>
-              <hr>
-              <p>If you want to visit our Website, click the button below:</p>
-              <a href="https://cristoerp.com/" target="_blank" class="btn">Visit Website</a>
-            </div>
-          </body>
-          </html>`
-                }, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'api-key': ''
-                    }
+            if (response.status === 201) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your request has been sent successfully.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
                 });
-
-                if (confirmationResponse.status === 201) {
-                    const storeResponse = await axios.post(`${ApiUrl}/store/contact`, formData);
-                    if (storeResponse.status === 200) {
-                        Swal.fire({
-                            title: 'Email Sent Success!',
-                            text: 'Your request has been sent successfully. Please check your email for confirmation.',
-                            icon: 'success',
-                            confirmButtonText: 'OK'
-                        }).then(() => {
-                            window.location.reload();
-                        });
-                        setFormData({
-                            name: '',
-                            mobile: '',
-                            email: '',
-                            address: '',
-                            message: ''
-                        });
-                        setCaptchaVerified(false);
-                    }
-                } else {
-                    throw new Error('Failed to send confirmation email.');
-                }
+                setFormData({
+                    name: '',
+                    mobile: '',
+                    email: '',
+                    message: ''
+                });
             } else {
                 throw new Error('Failed to send email.');
             }
-            setLoading(false);
         } catch (error) {
-            console.error('Error sending email:', error);
             Swal.fire({
                 title: 'Error!',
                 text: 'Failed to send message. Please try again later.',
@@ -373,7 +251,7 @@ const ModalForm = () => {
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-6 form-group">
+                                            <div className="col-md-12 form-group">
                                                 <label htmlFor="email">
                                                     Email <span style={{ color: "red" }}>*</span>
                                                 </label>
@@ -383,19 +261,6 @@ const ModalForm = () => {
                                                     id="email"
                                                     name="email"
                                                     value={formData.email}
-                                                    onChange={handleChange}
-                                                />
-                                            </div>
-                                            <div className="col-md-6 form-group">
-                                                <label htmlFor="address">
-                                                    Address
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    id="address"
-                                                    name="address"
-                                                    value={formData.address}
                                                     onChange={handleChange}
                                                 />
                                             </div>
@@ -424,7 +289,7 @@ const ModalForm = () => {
                                             className="btn btn-primary btn-block"
                                             id="submitBtn"
                                         >
-                                            {loading ? 'Processing...' : 'Activate Free Demo'}
+                                            Activate Free Demo
                                         </button>
                                         <br />
                                         <br />
