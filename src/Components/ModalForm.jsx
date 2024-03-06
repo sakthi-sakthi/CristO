@@ -265,7 +265,7 @@ const ModalForm = () => {
                 }, {
                     headers: {
                         'Content-Type': 'application/json',
-                        'api-key': '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'
+                        'api-key': ''
                     }
                 });
 
